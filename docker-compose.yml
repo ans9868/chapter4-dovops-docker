@@ -1,7 +1,6 @@
 services:
   chapter4-app:
-    build:
-      context: .        # use current directory (where Dockerfile is)
+    image: nour333/chapter4-express-app:latest
     ports:
       - "3000:8080"
 
@@ -10,5 +9,4 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - WATCHTOWER_POLL_INTERVAL=60
-
+      - WATCHTOWER_POLL_INTERVAL=10
