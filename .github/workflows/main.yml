@@ -27,5 +27,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: yourdockerhubusername/chapter4-express-app:latest
-
+          tags: nour333/chapter4-express-app:latest
