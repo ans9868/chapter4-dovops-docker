@@ -13,6 +13,14 @@ fi
 GITHUB_REPO=$1
 DOCKERHUB_REPO=$2
 
+#attemting to login to docker if possible
+echo "Attempting Docker login..."
+if echo "$DOCKER_PWD" | docker login -u "$DOCKER_USER" -- password-stdin; then
+  echo "Docker login succeeded."
+else
+  echo "Docker login failed. Continuing without login..."
+fi
+
 # clone the github and go in the folder so we can build it
 git clone https://github.com/$GITHUB_REPO temp-repo
 cd temp-repo
